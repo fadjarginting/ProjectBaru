@@ -11,11 +11,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
-    val morty = findViewById<RecyclerView>(R.id.rv_morty)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val morty = findViewById<RecyclerView>(R.id.rv_mortin)
         ApiConfig.getService().getMorty().enqueue(object : Callback<ResponseMorty>{
             override fun onResponse(call: Call<ResponseMorty>, response: Response<ResponseMorty>) {
                 if (response.isSuccessful){
